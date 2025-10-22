@@ -9,12 +9,10 @@ load_dotenv()
 # In production, use a more robust authentication system (JWT, OAuth2, etc.)
 API_KEY = os.getenv("API_KEY")
 
-# Ensure API key is configured
+# Warning if API key is not configured (but don't crash)
 if not API_KEY:
-    raise RuntimeError(
-        "API_KEY environment variable is not set. "
-        "Please create a .env file with API_KEY=your-secret-key"
-    )
+    print("⚠️  Warning: API_KEY environment variable is not set. API authentication is disabled.")
+    API_KEY = "development-key-please-change"  # Fallback for development
 
 async def verify_api_key(x_api_key: Optional[str] = Header(None, description="API Key for authentication")):
     """
