@@ -684,17 +684,6 @@ def get_ocr_processor():
     """Get or create OCR processor instance"""
     global _ocr_processor
     
-    # Check if Google Cloud libraries are available
-    if not DOCUMENTAI_AVAILABLE or not GENAI_AVAILABLE:
-        raise HTTPException(
-            status_code=503,
-            detail={
-                "status": "error",
-                "message": "OCR service not available. Google Cloud libraries not installed.",
-                "info": "This feature requires google-cloud-documentai and google-generativeai packages."
-            }
-        )
-    
     if _ocr_processor is None:
         if not all([PROJECT_ID, LOCATION, PROCESSOR_ID, GEMINI_API_KEY]):
             raise HTTPException(
