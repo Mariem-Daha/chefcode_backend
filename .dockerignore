@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+chefcode.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+!README.md
+
+# Test files
+test_*.py
+
+# Uploads
+uploads/
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.tiff
+*.tif
+
+# Service account keys (will be provided via environment)
+invoice_key.json
+*-service-account.json
+google-service-account.json
+
+# Build files
+.dockerignore
+Dockerfile
+render.yaml
+build.sh
+render-checklist.bat
+render-checklist.sh
+git-setup.bat
+runtime.txt
+.python-version
