@@ -52,12 +52,8 @@ PROCESSOR_ID = os.getenv("PROCESSOR_ID")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GOOGLE_CREDS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 
-# Validate environment variables
-if not all([PROJECT_ID, LOCATION, PROCESSOR_ID, GEMINI_API_KEY]):
-    safe_print("⚠ Warning: Missing environment variables")
-    safe_print(
-        "Please ensure PROJECT_ID, LOCATION, PROCESSOR_ID, and GEMINI_API_KEY are set in .env file"
-    )
+# Don't validate at import time - let endpoints handle it
+# This prevents crashes when environment variables are missing
 
 
 class InvoiceOCR:
